@@ -1,0 +1,32 @@
+ echo ”enter the number=”
+read n
+q=$n
+a=0
+while [ $q – gt 0 ]
+do
+r= `expr $q % 10 `
+q= `expr $q / 10 `
+a=`expr $a + $r /* $r /*$r `
+done
+if [ $a=$n ]
+then
+echo “the number $n  armstrong number”
+else
+echo “the number $n not armstrong number”
+fi
+
+
+
+
+echo"enter the number to cheak number is prime or not"
+
+read num
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num  not  prime number"
+    exit
+  fi
+done
+echo "$num  prime number"
