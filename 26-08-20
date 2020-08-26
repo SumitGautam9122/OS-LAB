@@ -1,0 +1,38 @@
+# Area and circumfrence of circle
+r=6
+echo " the radious of the circle is $r"
+area=$(echo "3.17*$r*$r" | bc )
+circum=$(echo "3.17*2*$r" | bc )
+echo "area of the circle is             " $area
+echo "circumference of the circle is    " $circum
+
+
+
+#LCM and  GCD
+echo "The first number :20"
+a=20
+echo "The second number :30 "
+b=30
+
+if [ $a -gt $b ]
+then
+num=$a
+num2=$b
+else
+num=$b
+num2=$a
+fi
+r=`expr $num % $num2`
+
+while [ $r -ne 0 ]
+do
+num=$num2
+num2=$r
+r=`expr $num % $num2`
+done
+
+gcd=$num2
+lcm=`expr $a * $b / $gcd`
+
+echo " The LCM of $a and $b is : $lcm"
+echo " The GCD of $a and $b is : $gcd"
